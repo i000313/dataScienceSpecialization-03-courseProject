@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+UCI HAR Dataset/
+
 *.pydevproject
 .project
 .metadata

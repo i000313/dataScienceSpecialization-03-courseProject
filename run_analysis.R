@@ -1,5 +1,5 @@
 #
-# You should create one R script called run_analysis.R that does the following. 
+# This R script does the following: 
 # 
 # 1. Merges the training and the test sets to create one data set.
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -95,10 +95,10 @@ xy.fulldataset.df <- rbind(xy.test.df, xy.train.df)
 # [1] 10299
 
 
-#
+#########################################################################
 # GOAL: 2. Extracts only the measurements on the mean and standard deviation
 # for each measurement.
-# 
+#########################################################################
 
 # Regular Expression to select the desired features
 feature.name.regexp <- "(mean|std)[(]?[)]?"
@@ -112,10 +112,10 @@ xy.fulldataset.selected.measurements.df <- xy.fulldataset.df[, measurements.we.w
 # [1] 67
 # [1] 10299
 
-#
+#########################################################################
 # GOAL: 3. Uses descriptive activity names to name the activities in the 
 # data set.
-# 
+######################################################################### 
 
 activity.labels.df <- read.table("UCI HAR Dataset/activity_labels.txt", header=FALSE, sep=" ", stringsAsFactors=FALSE)
 # > head(activity.labels.df, 3)
@@ -131,10 +131,10 @@ xy.fulldataset.df <- merge(xy.fulldataset.selected.measurements.df, activity.lab
 # > ncol(xy.fulldataset.df);nrow(xy.fulldataset.df)
 #
 
-#
+#########################################################################
 # GOAL: 4. Appropriately labels the data set with descriptive activity 
 # names. 
-#
+#########################################################################
 
 #names(xy.fulldataset.df)
 new.names <- gsub("[)(-]", "", names(xy.fulldataset.df))
@@ -143,10 +143,10 @@ names(xy.fulldataset.df) <- new.names
 # Count all columns but "subject.id" and "activity.label"
 col.indexes <- length(xy.fulldataset.df) - 2
 
-#
+#########################################################################
 # GOAL: 5. Creates a second, independent tidy data set with the 
 # average of each variable for each activity and each subject. 
-#
+#########################################################################
 
 # Compute the mean for all selected columns.
 # NOTE: this includes the first column, the "activity.id".
@@ -154,5 +154,5 @@ xy.tidydataset.df <- aggregate(xy.fulldataset.df[, 1:col.indexes]
           , list(subject.id = xy.fulldataset.df$subject.id,
                  activity.label = xy.fulldataset.df$activity.label)
           , mean)
-
+# Write the tidy dataset to file, ignoring the row names.
 write.csv(file="tidy_dataset.csv", x=xy.tidydataset.df, row.names=FALSE)
