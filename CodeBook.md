@@ -18,13 +18,14 @@ the following operations:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
-3. Uses descriptive activity names to name the activities in the data set
+3. Uses descriptive activity names to name the activities in the data set.
 4. Appropriately labels the data set with descriptive activity names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
  
 # Variables Description
 
-Each variable name is compound of the following substrings:
+The tidy dataset has the variables described below. Each of those variable names 
+is compound of the following substrings:
 
 - the prefix 't' is used to denote time (e.g. tBodyAccMeanX);
 - the prefix 'f' is used to denote time (e.g. fBodyAccMeanX);

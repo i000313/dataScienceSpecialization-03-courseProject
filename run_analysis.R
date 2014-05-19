@@ -154,4 +154,5 @@ xy.tidydataset.df <- aggregate(xy.fulldataset.df[, 1:col.indexes]
           , list(subject.id = xy.fulldataset.df$subject.id,
                  activity.label = xy.fulldataset.df$activity.label)
           , mean)
-  
+
+write.csv(file="tidy_dataset.csv", x=xy.tidydataset.df, row.names=FALSE)
