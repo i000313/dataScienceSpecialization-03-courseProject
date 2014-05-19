@@ -3,6 +3,8 @@
 #################
 
 UCI HAR Dataset/
+getdata_projectfiles_UCI HAR Dataset.zip
+code_book.xlsx
 
 *.pydevproject
 .project
