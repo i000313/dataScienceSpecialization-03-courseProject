@@ -1,10 +1,17 @@
+Tidy Dataset - Code Book 
+=========================
+
+This code book describes:
+- the data;
+- the work performed to clean up the data;
+- the variables.
 
 # The data
 
 The tidy dataset (tidy_dataset.csv) is a sub set of the **Human Activity Recognition Using Smartphones Dataset**.
 The tidy dataset is compound of means and stand deviations of a subset of variable from the original dataset.
 
-# Transformations or work that you performed to clean up the data
+# Work Performed to Clean Up the Data
 
 The tidy dataset was created by the **run_analysis.R** script. This script performes
 the following operations:
@@ -35,6 +42,7 @@ Each variable name is compound of the following substrings:
 
 
 **Variable names and description:**
+
 The tidy dataset has the following variables.
 (note: I'm not an english native speaker, therefore some of the following descriptions may "sound strange".)
 
