@@ -1,9 +1,11 @@
-The dataset to be processed must be put here. For that:
+The dataset to be processed must be put inside this directory. For that:
 
 1. Download the dataset from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ;
 2. Unzip the downloaded file;
 
-At the end the directory should have the following structure:
+After that the directory should have the following structure:
+
+```
 \UCI HAR Dataset
 	\test
 		\Inertial Signals (directory with 9 *.txt files)
@@ -19,3 +21,4 @@ At the end the directory should have the following structure:
 	features.txt
 	features_info.txt
 	README.txt
+```
